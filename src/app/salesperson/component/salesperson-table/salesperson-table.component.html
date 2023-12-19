@@ -1,0 +1,47 @@
+<div class="card">
+  <p-table
+    [value]="salespeople"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 30%">Name</th>
+        <th style="width: 10%">Registration Number</th>
+        <th style="width: 10%">Start date</th>
+        <th style="width: 10%">End date</th>
+        <th style="width: 30%">Estate agent name</th>
+        <th style="width: 10%">Estate agent license number</th>
+        <th style="width: 5%">Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-salesperson>
+      <tr>
+        <td>{{ salesperson.name }}</td>
+        <td>{{ salesperson.registrationNumber }}</td>
+        <td>{{ salesperson.registrationStartDate }}</td>
+        <td>{{ salesperson.registrationEndDate }}</td>
+        <td>{{ salesperson.estateAgentName }}</td>
+        <td>{{ salesperson.estateAgentLicenseNumber }}</td>
+        <td>ola-ola</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+      <p-button
+        type="button"
+        icon="pi pi-plus"
+        styleClass="p-button-text"
+      ></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+      <p-button
+        type="button"
+        icon="pi pi-cloud"
+        styleClass="p-button-text"
+      ></p-button>
+    </ng-template>
+  </p-table>
+</div>
